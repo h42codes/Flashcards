@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,5 +60,4 @@ class ViewController: UIViewController {
     @IBAction func didTapOptionThree(_ sender: Any) {
         btnOptionThree.isHidden = true
     }
-    
 }
