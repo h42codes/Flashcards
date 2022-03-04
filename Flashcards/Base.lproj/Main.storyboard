@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-RN-RZ1">
-                                <rect key="frame" x="61" y="342" width="293" height="213"/>
+                                <rect key="frame" x="61" y="187" width="293" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seoul" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-bt-UKy">
@@ -32,7 +32,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's the capital of South Korea?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-dh-djG">
                                         <rect key="frame" x="0.0" y="0.0" width="293" height="213"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.52175165713514182" green="0.68449641196002253" blue="0.87482960382694108" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,12 +44,48 @@
                                     <outletCollection property="gestureRecognizers" destination="0NV-vS-ypG" appends="YES" id="pjT-MB-9Ku"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjR-yb-ZFy">
+                                <rect key="frame" x="61" y="453" width="293" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New York">
+                                    <color key="baseForegroundColor" red="0.19486084579999999" green="0.45238590239999998" blue="0.86279124019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapOptionOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ROW-sx-6N3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbX-pd-OLk">
+                                <rect key="frame" x="61" y="514" width="293" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Seoul">
+                                    <color key="baseForegroundColor" red="0.19486084579999999" green="0.45238590239999998" blue="0.86279124019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gca-Zj-2F1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvE-Pf-spv">
+                                <rect key="frame" x="61" y="575" width="293" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Paris">
+                                    <color key="baseForegroundColor" red="0.19486084579999999" green="0.45238590239999998" blue="0.86279124019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapOptionThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0s-s5-bTO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="jfA-bt-UKy" id="OBi-Mm-2Qu"/>
+                        <outlet property="btnOptionOne" destination="RjR-yb-ZFy" id="bb4-Cu-xH9"/>
+                        <outlet property="btnOptionThree" destination="mvE-Pf-spv" id="x9z-D6-SMY"/>
+                        <outlet property="btnOptionTwo" destination="kbX-pd-OLk" id="bMn-nX-FPL"/>
                         <outlet property="card" destination="ZnV-RN-RZ1" id="Afz-ck-B4q"/>
                         <outlet property="frontLabel" destination="p4e-dh-djG" id="OZi-Ot-0Ae"/>
                     </connections>
