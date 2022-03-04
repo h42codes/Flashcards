@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-EK-f5B">
-                                <rect key="frame" x="20" y="342" width="374" height="213"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-RN-RZ1">
+                                <rect key="frame" x="61" y="342" width="293" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seoul" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-bt-UKy">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="213"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="213"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's the capital of South Korea?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-dh-djG">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="213"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="213"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.52175165713514182" green="0.68449641196002253" blue="0.87482960382694108" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="0NV-vS-ypG" appends="YES" id="gaX-rU-R4t"/>
+                                    <outletCollection property="gestureRecognizers" destination="0NV-vS-ypG" appends="YES" id="pjT-MB-9Ku"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="jfA-bt-UKy" id="OBi-Mm-2Qu"/>
+                        <outlet property="card" destination="ZnV-RN-RZ1" id="Afz-ck-B4q"/>
                         <outlet property="frontLabel" destination="p4e-dh-djG" id="OZi-Ot-0Ae"/>
                     </connections>
                 </viewController>
