@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Flashcards
-//
-//  Created by erin on 3/4/22.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
