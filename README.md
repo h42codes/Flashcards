@@ -8,9 +8,7 @@ This basic Flashcard app displays a question, and on tap displays the answer to 
 ### App Walk-though
 
 <img src="https://github.com/h42codes/Flashcards/raw/main/lab1.gif" width=200><br>
-<img src="https://github.com/h42codes/Flashcards/raw/main/lab1_optional1.gif" width=200><br>
-<img src="https://github.com/h42codes/Flashcards/raw/main/lab1_optional2.gif" width=200><br>
-<img src="https://github.com/h42codes/Flashcards/raw/main/lab1_optional3.gif" width=200><br>
+<img src="https://github.com/h42codes/Flashcards/raw/main/lab1_optionals.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
