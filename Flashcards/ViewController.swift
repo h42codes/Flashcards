@@ -45,9 +45,14 @@ class ViewController: UIViewController {
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
     }
     
-//    @IBAction func didTapOnFlashcard(_ sender: Any) {
-//        frontLabel.isHidden.toggle()
-//    }
+    @IBAction func didTapOnFlashcard(_ sender: Any) {
+        // frontLabel.isHidden.toggle()
+        if frontLabel.isHidden {
+            frontLabel.isHidden = false
+        } else {
+            frontLabel.isHidden = true
+        }
+    }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         btnOptionOne.isHidden = true
