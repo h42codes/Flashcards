@@ -108,7 +108,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-65" y="295"/>
+            <point key="canvasLocation" x="206" y="242"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="H4N-2P-fkW">
@@ -119,17 +119,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9H-Kn-M3h">
-                                <rect key="frame" x="159" y="404" width="97" height="34"/>
+                                <rect key="frame" x="66" y="265" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1H9-op-TRp">
-                                <rect key="frame" x="159" y="306" width="97" height="34"/>
+                                <rect key="frame" x="66" y="187" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-Vk-DnI">
+                                <rect key="frame" x="172" y="402" width="71" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapOnDone:" destination="hXw-g0-SL4" eventType="touchUpInside" id="hgr-ce-aNF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qlI-aN-fC2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,10 +152,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="o9H-Kn-M3h" id="4lc-eF-piG"/>
+                        <outlet property="questionTextField" destination="1H9-op-TRp" id="Qe5-YO-69h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MB-Y4-S8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="294"/>
+            <point key="canvasLocation" x="789.85507246376812" y="179.46428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e1x-RY-2hp">
@@ -162,7 +177,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M89-KB-Z5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="294"/>
+            <point key="canvasLocation" x="648" y="741"/>
         </scene>
     </scenes>
     <resources>
