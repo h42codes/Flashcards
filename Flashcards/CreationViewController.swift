@@ -26,7 +26,7 @@ class CreationViewController: UIViewController {
     
     @IBAction func didTapOnDone(_ sender: Any) {
         // grab the text in the question and answer text fields
-        // and call the fnction in flashards view controller
+        // and call the function in flashards view controller
         let questionText = questionTextField.text
         let answerText = answerTextField.text
         flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
