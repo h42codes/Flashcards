@@ -58,6 +58,9 @@ class ViewController: UIViewController {
         if segue.identifier == "EditSegue" {
             creationController.initialQuestion = frontLabel.text
             creationController.initialAnswer = backLabel.text
+            // creationController.initialExtraAnswerOne = btnOptionOne.title(for: .normal)
+            creationController.initialExtraAnswerOne = btnOptionOne.titleLabel?.text
+            creationController.initialExtraAnswerTwo = btnOptionThree.titleLabel?.text
         }
     }
     
@@ -70,9 +73,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateFlashcard(question: String, answer: String) {
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String) {
         frontLabel.text = question
         backLabel.text = answer
+        
+        // TODO: implement random placement
+        btnOptionOne.setTitle(extraAnswerOne, for: .normal)
+        btnOptionTwo.setTitle(answer, for: .normal)
+        btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {

@@ -13,8 +13,13 @@ class CreationViewController: UIViewController {
 
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var extraAnswerOneTextField: UITextField!
+    @IBOutlet weak var extraAnswerTwoTextField: UITextField!
+    
     var initialQuestion: String?  // it's okay for initial values to be nil
     var initialAnswer: String?
+    var initialExtraAnswerOne: String?
+    var initialExtraAnswerTwo: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,8 @@ class CreationViewController: UIViewController {
         // Do any additional setup after loading the view.
         questionTextField.text = initialQuestion
         answerTextField.text = initialAnswer
+        extraAnswerOneTextField.text = initialExtraAnswerOne
+        extraAnswerTwoTextField.text = initialExtraAnswerTwo
     }
     
     @IBAction func didTapOnCancel(_ sender: Any) {
@@ -33,14 +40,17 @@ class CreationViewController: UIViewController {
         // and call the function in flashards view controller
         let questionText = questionTextField.text
         let answerText = answerTextField.text
-        if questionText == "" || answerText == "" {
+        let extraAnswerOneText = extraAnswerOneTextField.text
+        let extraAnswerTwoText = extraAnswerTwoTextField.text
+        
+        if questionText == "" || answerText == "" || extraAnswerOneText == "" || extraAnswerTwoText == "" {
             // error message
             let alert = UIAlertController(title: "Missing text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default)
             alert.addAction(okAction)
             present(alert, animated: true)
         } else {
-            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswerOneText!, extraAnswerTwo: extraAnswerTwoText!)
             dismiss(animated: true)
         }
     }

@@ -119,7 +119,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="205.79710144927537" y="241.74107142857142"/>
+            <point key="canvasLocation" x="-222" y="167"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="H4N-2P-fkW">
@@ -129,12 +129,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9H-Kn-M3h">
-                                <rect key="frame" x="66" y="265" width="283" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1H9-op-TRp">
                                 <rect key="frame" x="66" y="187" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,6 +146,24 @@
                                     <action selector="didTapOnDone:" destination="hXw-g0-SL4" eventType="touchUpInside" id="hgr-ce-aNF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9H-Kn-M3h">
+                                <rect key="frame" x="66" y="229" width="283" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEc-0m-HZT">
+                                <rect key="frame" x="66" y="271" width="283" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wp0-68-RFs">
+                                <rect key="frame" x="66" y="313" width="283" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qlI-aN-fC2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,12 +177,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="o9H-Kn-M3h" id="4lc-eF-piG"/>
+                        <outlet property="extraAnswerOneTextField" destination="sEc-0m-HZT" id="e3J-PV-nqm"/>
+                        <outlet property="extraAnswerTwoTextField" destination="Wp0-68-RFs" id="JRQ-2d-gjF"/>
                         <outlet property="questionTextField" destination="1H9-op-TRp" id="Qe5-YO-69h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MB-Y4-S8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765" y="354"/>
+            <point key="canvasLocation" x="1493" y="242"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e1x-RY-2hp">
@@ -189,7 +203,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M89-KB-Z5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="263"/>
+            <point key="canvasLocation" x="535" y="336"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
