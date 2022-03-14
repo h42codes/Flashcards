@@ -37,6 +37,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcM-Hq-Q5v">
+                                        <rect key="frame" x="231" y="151" width="54" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="✏️">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="g28-1T-kbz" kind="show" identifier="EditSegue" id="kbk-8a-4G6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
@@ -108,7 +119,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="206" y="242"/>
+            <point key="canvasLocation" x="205.79710144927537" y="241.74107142857142"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="H4N-2P-fkW">
@@ -159,13 +170,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MB-Y4-S8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.85507246376812" y="179.46428571428569"/>
+            <point key="canvasLocation" x="1765" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e1x-RY-2hp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g28-1T-kbz" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nxm-e9-HXT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuA-fd-Xko">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -177,9 +189,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M89-KB-Z5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="741"/>
+            <point key="canvasLocation" x="984" y="263"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kbk-8a-4G6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
