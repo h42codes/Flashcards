@@ -7,6 +7,7 @@ This Flashcard app displays a question, and on tap displays the answer to the qu
 
 ### App Walk-though
 <img src="https://github.com/h42codes/Flashcards/raw/main/lab2.gif" width=200><br>
+<img src="https://github.com/h42codes/Flashcards/raw/main/lab2_optionals.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
