@@ -7,6 +7,14 @@
 
 import UIKit
 
+struct Flashcard {
+    var question: String
+    var answer: String
+    var extraAnswerOne: String
+    var extraAnswerTwo: String
+}
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var frontLabel: UILabel!
@@ -16,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionOne: UIButton!
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
+    
+    // Array to hold flashcards
+    var flashcards = [Flashcard]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,13 +85,16 @@ class ViewController: UIViewController {
     }
     
     func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String) {
-        frontLabel.text = question
-        backLabel.text = answer
+        let flashcard = Flashcard(question: question, answer: answer, extraAnswerOne: extraAnswerOne, extraAnswerTwo: extraAnswerTwo)
+        frontLabel.text = flashcard.question
+        backLabel.text = flashcard.answer
         
         // TODO: implement random placement
-        btnOptionOne.setTitle(extraAnswerOne, for: .normal)
-        btnOptionTwo.setTitle(answer, for: .normal)
-        btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
+        btnOptionOne.setTitle(flashcard.extraAnswerOne, for: .normal)
+        btnOptionTwo.setTitle(flashcard.answer, for: .normal)
+        btnOptionThree.setTitle(flashcard.extraAnswerTwo, for: .normal)
+        
+        flashcards.append(flashcard)
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
