@@ -103,6 +103,9 @@ class ViewController: UIViewController {
         
         // update labels
         updateLabels()
+        
+        // save flashcards every time our flashcards array changes
+        saveAllFlashcardsToDisk()
     }
     
     func updateNextPrevButtons() {
@@ -131,6 +134,20 @@ class ViewController: UIViewController {
         btnOptionOne.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
         btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
         btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
+    }
+    
+    func saveAllFlashcardsToDisk() {
+        // Save array on disk using UserDefaults
+        // UserDefaults doesn't know how to store an array of Flashcard on disk
+        // It does not how to store an array of dictionaries
+        // UserDefaults.standard.set(flashcards, forKey: "flashcards")
+        
+        // From flashcard array to dictionary array
+        let dictionaryArray = flashcards.map { (card) -> [String: String] in
+            return ["question": card.question, "answer": card.answer, "extraAnswerOne": card.extraAnswerOne, "extraAnswerTwo": card.extraAnswerTwo]
+        }
+        
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
