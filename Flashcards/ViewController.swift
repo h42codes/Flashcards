@@ -61,7 +61,16 @@ class ViewController: UIViewController {
         btnOptionThree.layer.borderWidth = 3.0
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
         
-        updateFlashcard(question: "What's the capital of South Korea?", answer: "Seoul", extraAnswerOne: "New York", extraAnswerTwo: "Paris")
+        // Read saved flashcards
+        readSavedFlashcards()
+        
+        // Adding our initial flashcard if needed
+        if flashcards.count == 0 {
+            updateFlashcard(question: "What's the capital of South Korea?", answer: "Seoul", extraAnswerOne: "New York", extraAnswerTwo: "Paris")
+        } else {
+            updateLabels()
+            updateNextPrevButtons()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,6 +158,23 @@ class ViewController: UIViewController {
         
         UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
     }
+    
+    func readSavedFlashcards() {
+        // Read dictionary array from disk (if any)
+        // let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards")
+        // First time we launch the app, we might not have anything stored
+        // We need to check if there's anything stored using `if let`
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
+            // Here we know for sure we DO have a dictionary array
+            let savedCards = dictionaryArray.map { dictionary -> Flashcard in
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, extraAnswerOne: dictionary["extraAnswerOne"]!, extraAnswerTwo: dictionary["extraAnswerTwo"]!)
+            }
+            
+            // Put all saved cards into the flashcards array
+            flashcards.append(contentsOf: savedCards)
+        }
+    }
+    
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         btnOptionOne.isHidden = true
