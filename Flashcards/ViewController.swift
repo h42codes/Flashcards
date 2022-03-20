@@ -25,8 +25,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
     
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
     // Array to hold flashcards
     var flashcards = [Flashcard]()
+    
+    // Current flashcard index
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +60,8 @@ class ViewController: UIViewController {
         btnOptionThree.layer.cornerRadius = 20.0
         btnOptionThree.layer.borderWidth = 3.0
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+        
+        updateFlashcard(question: "What's the capital of South Korea?", answer: "Seoul", extraAnswerOne: "New York", extraAnswerTwo: "Paris")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,15 +94,43 @@ class ViewController: UIViewController {
     
     func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String) {
         let flashcard = Flashcard(question: question, answer: answer, extraAnswerOne: extraAnswerOne, extraAnswerTwo: extraAnswerTwo)
-        frontLabel.text = flashcard.question
-        backLabel.text = flashcard.answer
-        
-        // TODO: implement random placement
-        btnOptionOne.setTitle(flashcard.extraAnswerOne, for: .normal)
-        btnOptionTwo.setTitle(flashcard.answer, for: .normal)
-        btnOptionThree.setTitle(flashcard.extraAnswerTwo, for: .normal)
-        
+
         flashcards.append(flashcard)
+        currentIndex = flashcards.count - 1
+        
+        // update buttons
+        updateNextPrevButtons()
+        
+        // update labels
+        updateLabels()
+    }
+    
+    func updateNextPrevButtons() {
+        // disable next button if at the end
+        if currentIndex == flashcards.count - 1 {
+            nextButton.isEnabled = false
+        } else {
+            nextButton.isEnabled = true
+        }
+        
+        // disable prev button if at the beginning
+        if currentIndex == 0 {
+            prevButton.isEnabled = false
+        } else {
+            prevButton.isEnabled = true
+        }
+    }
+    
+    func updateLabels() {
+        // get current flashcard
+        let currentFlashcard = flashcards[currentIndex]
+        
+        // update labels
+        frontLabel.text = currentFlashcard.question
+        backLabel.text = currentFlashcard.answer
+        btnOptionOne.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
+        btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
+        btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -107,5 +143,17 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOptionThree(_ sender: Any) {
         btnOptionThree.isHidden = true
+    }
+    
+    @IBAction func didTapOnPrev(_ sender: Any) {
+        currentIndex -= 1
+        updateLabels()
+        updateNextPrevButtons()
+    }
+    
+    @IBAction func didTapOnNext(_ sender: Any) {
+        currentIndex += 1
+        updateLabels()
+        updateNextPrevButtons()
     }
 }
