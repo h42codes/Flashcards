@@ -3,7 +3,7 @@
 ## Lab 3
 
 ### App Description
-This Flashcard app allows users to create new flashcards.
+This Flashcard app can save multiple user-created cards so that users can revisit and review their cards.
 
 ### App Walk-though
 <img src="https://github.com/h42codes/Flashcards/raw/main/lab3.gif" width=200><br>
