@@ -164,7 +164,7 @@ class ViewController: UIViewController {
         
         // reset options
         btnOptionOne.isHidden = false
-        btnOptionTwo.isHidden = false
+        frontLabel.isHidden = false
         btnOptionThree.isHidden = false
     }
     
