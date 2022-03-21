@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nw-cF-8PJ">
-                                        <rect key="frame" x="8" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="8" y="8" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="❌">
@@ -142,6 +142,7 @@
                         <outlet property="btnOptionThree" destination="mvE-Pf-spv" id="x9z-D6-SMY"/>
                         <outlet property="btnOptionTwo" destination="kbX-pd-OLk" id="bMn-nX-FPL"/>
                         <outlet property="card" destination="ZnV-RN-RZ1" id="Afz-ck-B4q"/>
+                        <outlet property="deleteButton" destination="6Nw-cF-8PJ" id="Wkq-QP-G8F"/>
                         <outlet property="frontLabel" destination="p4e-dh-djG" id="OZi-Ot-0Ae"/>
                         <outlet property="nextButton" destination="qWd-cZ-ul1" id="NUO-Zo-qBf"/>
                         <outlet property="prevButton" destination="vFj-UQ-Eeg" id="eJI-bn-WfT"/>

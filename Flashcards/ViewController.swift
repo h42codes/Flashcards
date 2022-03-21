@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    
     // Array to hold flashcards
     var flashcards = [Flashcard]()
     
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
         } else {
             updateLabels()
             updateNextPrevButtons()
+            // updateDeleteButton()
         }
     }
     
@@ -113,6 +116,9 @@ class ViewController: UIViewController {
         // update labels
         updateLabels()
         
+        // update delete button
+        // updateDeleteButton()
+        
         // save flashcards every time our flashcards array changes
         saveAllFlashcardsToDisk()
     }
@@ -144,6 +150,15 @@ class ViewController: UIViewController {
         btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
         btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
     }
+    
+//    func updateDeleteButton() {
+//        // disable delete button if there's only one card
+//        if flashcards.count == 1 {
+//            deleteButton.isEnabled = false
+//        } else {
+//            deleteButton.isEnabled = true
+//        }
+//    }
     
     func saveAllFlashcardsToDisk() {
         // Save array on disk using UserDefaults
@@ -192,41 +207,67 @@ class ViewController: UIViewController {
         currentIndex -= 1
         updateLabels()
         updateNextPrevButtons()
+        // updateDeleteButton()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex += 1
         updateLabels()
         updateNextPrevButtons()
+        // updateDeleteButton()
     }
     
     @IBAction func didTapOnDelete(_ sender: Any) {
-        // Show confirmation
-        let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            self.deleteCurrentFlashcard()
+        // Special case: check if the only card is being deleted
+        if flashcards.count == 1 {
+            let alert = UIAlertController(title: "Error", message: "You can't delete your only card", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(okAction)
+            // present the alert controller!
+            present(alert, animated: true)
+            
+        } else {
+            // Show confirmation
+            let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+                self.deleteCurrentFlashcard()
+            }
+            alert.addAction(deleteAction)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(cancelAction)
+            
+            // present the alert controller!
+            present(alert, animated: true)
         }
-        alert.addAction(deleteAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(cancelAction)
-        
-        // present the alert controller!
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+//
+//        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+//            self.deleteCurrentFlashcard()
+//        }
+//        alert.addAction(deleteAction)
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+//        alert.addAction(cancelAction)
+//
+//        // present the alert controller!
+//        present(alert, animated: true)
     }
     
     func deleteCurrentFlashcard() {
         // Delete current card
         flashcards.remove(at: currentIndex)
         
-        // Speical case: check if the last card has been deleted
+        // Speical case: check if the last card was deleted
         if currentIndex > flashcards.count - 1 {
             currentIndex = flashcards.count - 1
         }
         
         updateNextPrevButtons()
         updateLabels()
+        // updateDeleteButton()
         // store the updated flashcards array to the disk
         saveAllFlashcardsToDisk()
     }
