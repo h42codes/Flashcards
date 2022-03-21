@@ -161,6 +161,11 @@ class ViewController: UIViewController {
         btnOptionOne.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
         btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
         btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
+        
+        // reset options
+        btnOptionOne.isHidden = false
+        btnOptionTwo.isHidden = false
+        btnOptionThree.isHidden = false
     }
     
 //    func updateDeleteButton() {
