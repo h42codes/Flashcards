@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         
         // Adding our initial flashcard if needed
         if flashcards.count == 0 {
-            updateFlashcard(question: "What's the capital of South Korea?", answer: "Seoul", extraAnswerOne: "New York", extraAnswerTwo: "Paris")
+            updateFlashcard(question: "What's the capital of South Korea?", answer: "Seoul", extraAnswerOne: "New York", extraAnswerTwo: "Paris", isExisting: false)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -104,12 +104,24 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String) {
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String, isExisting: Bool) {
         let flashcard = Flashcard(question: question, answer: answer, extraAnswerOne: extraAnswerOne, extraAnswerTwo: extraAnswerTwo)
-
-        flashcards.append(flashcard)
-        currentIndex = flashcards.count - 1
         
+        if isExisting {
+            // Replace existing flashcard
+            flashcards[currentIndex] = flashcard
+        } else {
+            // Add flashcard to the array
+            flashcards.append(flashcard)
+            
+            // Logging to the console
+            print("Added new flashcard")
+            print("We now have \(flashcards.count) flashcards")
+            
+            currentIndex = flashcards.count - 1
+            print("Our current index is \(currentIndex)")
+        }
+
         // update buttons
         updateNextPrevButtons()
         
