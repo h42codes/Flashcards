@@ -155,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-300" y="75"/>
+            <point key="canvasLocation" x="-461" y="170"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="H4N-2P-fkW">
