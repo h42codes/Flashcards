@@ -97,11 +97,19 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         // frontLabel.isHidden.toggle()
-        if frontLabel.isHidden {
-            frontLabel.isHidden = false
-        } else {
-            frontLabel.isHidden = true
-        }
+//        if frontLabel.isHidden {
+//            frontLabel.isHidden = false
+//        } else {
+//            frontLabel.isHidden = true
+//        }
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            self.frontLabel.isHidden.toggle()
+        })
     }
     
     func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String, isExisting: Bool) {
