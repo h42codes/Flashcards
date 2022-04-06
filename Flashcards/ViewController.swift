@@ -54,17 +54,24 @@ class ViewController: UIViewController {
         backLabel.clipsToBounds = true
         
         // buttons with rounded corners and border
-        btnOptionOne.layer.cornerRadius = 20.0
-        btnOptionOne.layer.borderWidth = 3.0
-        btnOptionOne.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+//        btnOptionOne.layer.cornerRadius = 20.0
+//        btnOptionOne.layer.borderWidth = 3.0
+//        btnOptionOne.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+//
+//        btnOptionTwo.layer.cornerRadius = 20.0
+//        btnOptionTwo.layer.borderWidth = 3.0
+//        btnOptionTwo.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+//
+//        btnOptionThree.layer.cornerRadius = 20.0
+//        btnOptionThree.layer.borderWidth = 3.0
+//        btnOptionThree.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
         
-        btnOptionTwo.layer.cornerRadius = 20.0
-        btnOptionTwo.layer.borderWidth = 3.0
-        btnOptionTwo.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
-        
-        btnOptionThree.layer.cornerRadius = 20.0
-        btnOptionThree.layer.borderWidth = 3.0
-        btnOptionThree.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+        let buttons = [btnOptionOne, btnOptionTwo, btnOptionThree]
+        buttons.forEach {
+            $0?.layer.cornerRadius = 20.0
+            $0?.layer.borderWidth = 3.0
+            $0?.layer.borderColor = #colorLiteral(red: 0, green: 0.4596315026, blue: 0.8920277953, alpha: 1)
+        }
         
         // Read saved flashcards
         readSavedFlashcards()
