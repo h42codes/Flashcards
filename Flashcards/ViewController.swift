@@ -215,6 +215,22 @@ class ViewController: UIViewController {
         }
     }
     
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn() {
+        // start on the right side (without animation)
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity
+        })
+    }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         btnOptionOne.isHidden = true
@@ -237,9 +253,10 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex += 1
-        updateLabels()
+        // updateLabels()
         updateNextPrevButtons()
         // updateDeleteButton()
+        animateCardOut()
     }
     
     @IBAction func didTapOnDelete(_ sender: Any) {
