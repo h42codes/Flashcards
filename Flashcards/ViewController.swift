@@ -325,34 +325,50 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func didTapOptionOne(_ sender: Any) {
-        if btnOptionOne == correctAnswerButton {
+    // avoid code repetition
+    func handleButtonTab(btn: UIButton) {
+        if btn == correctAnswerButton {
             flipFlashcard()
         } else {
             frontLabel.isHidden = false
-            btnOptionOne.isEnabled = false
+            btn.isEnabled = false
         }
-//        btnOptionOne.isHidden = true
+    }
+    
+    @IBAction func didTapOptionOne(_ sender: Any) {
+        handleButtonTab(btn: sender as! UIButton)
+        
+//        if btnOptionOne == correctAnswerButton {
+//            flipFlashcard()
+//        } else {
+//            frontLabel.isHidden = false
+//            btnOptionOne.isEnabled = false
+//        }
+////        btnOptionOne.isHidden = true
     }
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
-        if btnOptionTwo == correctAnswerButton {
-            flipFlashcard()
-        } else {
-            frontLabel.isHidden = false
-            btnOptionTwo.isEnabled = false
-        }
-        // frontLabel.isHidden = true
+        handleButtonTab(btn: sender as! UIButton)
+        
+//        if btnOptionTwo == correctAnswerButton {
+//            flipFlashcard()
+//        } else {
+//            frontLabel.isHidden = false
+//            btnOptionTwo.isEnabled = false
+//        }
+//        // frontLabel.isHidden = true
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        if btnOptionThree == correctAnswerButton {
-            flipFlashcard()
-        } else {
-            frontLabel.isHidden = false
-            btnOptionThree.isEnabled = false
-        }
-//        btnOptionThree.isHidden = true
+        handleButtonTab(btn: sender as! UIButton)
+        
+//        if btnOptionThree == correctAnswerButton {
+//            flipFlashcard()
+//        } else {
+//            frontLabel.isHidden = false
+//            btnOptionThree.isEnabled = false
+//        }
+////        btnOptionThree.isHidden = true
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
