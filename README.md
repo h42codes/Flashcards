@@ -7,6 +7,7 @@ This Flashcard app can save multiple user-created cards so that users can revisi
 
 ### App Walk-though
 <img src="https://github.com/h42codes/Flashcards/raw/main/lab4.gif" width=200><br>
+<img src="https://github.com/h42codes/Flashcards/raw/main/lab4_optionals.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
@@ -16,9 +17,9 @@ This Flashcard app can save multiple user-created cards so that users can revisi
 - [x] User should see a slide animation when going to the previous flashcard
 - [x] Push code to GitHub
 ## Optional
-- [ ] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
-- [ ] User should see all views properly layout when using the app on a phone of different sizes
-- [ ] Correct answer in multiple choice should be random
+- [x] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [x] User should see all views properly layout when using the app on a phone of different sizes
+- [x] Correct answer in multiple choice should be random
 
 ## Lab 3
 
