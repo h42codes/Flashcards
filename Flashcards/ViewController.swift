@@ -232,6 +232,25 @@ class ViewController: UIViewController {
         })
     }
     
+    // figure out a way to resolve code reptition issue
+    func animateCardOutReverse() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardInReverse()
+        })
+    }
+    
+    func animateCardInReverse() {
+        // start on the left side
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity
+        })
+        
+    }
+    
     @IBAction func didTapOptionOne(_ sender: Any) {
         btnOptionOne.isHidden = true
     }
@@ -246,9 +265,10 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         currentIndex -= 1
-        updateLabels()
+        // updateLabels()
         updateNextPrevButtons()
         // updateDeleteButton()
+        animateCardOutReverse()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
