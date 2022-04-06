@@ -36,6 +36,9 @@ class ViewController: UIViewController {
     // Current flashcard index
     var currentIndex = 0
     
+    // Button to remember what the correct answer is
+    var correctAnswerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -218,14 +221,33 @@ class ViewController: UIViewController {
         // update labels
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
-        btnOptionOne.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
-        btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
-        btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
+        
+        // Update buttons: setting random answer to a random button
+        let buttons = [btnOptionOne, btnOptionTwo, btnOptionThree].shuffled()
+        let answers = [currentFlashcard.answer, currentFlashcard.extraAnswerOne, currentFlashcard.extraAnswerTwo].shuffled()
+        
+        for (button, answer) in zip(buttons, answers) {
+            // Set the title of this random button with a random answer
+            button?.setTitle(answer, for: .normal)
+            
+            // Save the button if it's the correct answer
+            if answer == currentFlashcard.answer {
+                correctAnswerButton = button
+            }
+        }
+        
+//        btnOptionOne.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
+//        btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
+//        btnOptionThree.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
         
         // reset options
-        btnOptionOne.isHidden = false
+//        btnOptionOne.isHidden = false
         frontLabel.isHidden = false
-        btnOptionThree.isHidden = false
+//        btnOptionThree.isHidden = false
+        
+        btnOptionOne.isEnabled = true
+        btnOptionTwo.isEnabled = true
+        btnOptionThree.isEnabled = true
     }
     
 //    func updateDeleteButton() {
@@ -304,16 +326,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
-        btnOptionOne.isHidden = true
+        if btnOptionOne == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            btnOptionOne.isEnabled = false
+        }
+//        btnOptionOne.isHidden = true
     }
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
+        if btnOptionTwo == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            btnOptionTwo.isEnabled = false
+        }
         // frontLabel.isHidden = true
-        flipFlashcard()
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        btnOptionThree.isHidden = true
+        if btnOptionThree == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            btnOptionThree.isEnabled = false
+        }
+//        btnOptionThree.isHidden = true
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
