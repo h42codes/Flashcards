@@ -78,7 +78,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         // set initial state and final state of the pop presentation animation
         // First start with the flashcard invisible and slightly smaller in size
         card.alpha = 0.0
@@ -86,24 +86,47 @@ class ViewController: UIViewController {
 
         btnOptionOne.alpha = 0.0
         btnOptionOne.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+    
         btnOptionTwo.alpha = 0.0
         btnOptionTwo.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+    
         btnOptionThree.alpha = 0.0
         btnOptionThree.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
-        
+
         // bouncy animation
         UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
             self.card.alpha = 1.0
             self.card.transform = CGAffineTransform.identity
-            
+
             self.btnOptionOne.alpha = 1.0
             self.btnOptionOne.transform = CGAffineTransform.identity
+    
             self.btnOptionTwo.alpha = 1.0
             self.btnOptionTwo.transform = CGAffineTransform.identity
+    
             self.btnOptionThree.alpha = 1.0
             self.btnOptionThree.transform = CGAffineTransform.identity
         })
     }
+    
+//    // Will this work?
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        let toAnimate = [card, btnOptionOne, btnOptionTwo, btnOptionThree]
+//
+//        toAnimate.forEach {
+//            $0?.alpha = 0.0
+//            $0?.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+//        }
+//
+//        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+//            toAnimate.forEach {
+//                $0?.alpha = 1.0
+//                $0?.transform = CGAffineTransform.identity
+//            }
+//        })
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // destination of the segue is the navigation Controller
