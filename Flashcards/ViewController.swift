@@ -308,7 +308,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
-        frontLabel.isHidden = true
+        // frontLabel.isHidden = true
+        flipFlashcard()
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
