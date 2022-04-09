@@ -7,7 +7,7 @@ This Flashcard app can save multiple user-created cards so that users can revisi
 
 ### App Walk-though
 <img src="https://github.com/h42codes/Flashcards/raw/main/lab4.gif" width=200><br>
-<img src="https://github.com/h42codes/Flashcards/raw/main/lab4_optionals.gif" width=200><br>
+<img src="https://github.com/h42codes/Flashcards/raw/main/lab4_optionals_re.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
